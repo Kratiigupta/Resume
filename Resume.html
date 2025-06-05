@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f9fafb;
+      color: #222;
+      display: flex;
+      min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .container {
+  display: flex;
+  position: relative; 
+  max-width: 960px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+    body.dark .container {
+      background: #1e1e1e;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    }
+
+    .sidebar {
+      background-color: #003c73;
+      color: white;
+      padding: 30px 20px;
+      width: 280px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid #fff;
+      object-fit: cover;
+    }
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .sidebar p {
+      font-size: 13px;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+    .contact-info {
+      text-align: left;
+      font-size: 14px;
+    }
+    .contact-info strong {
+      display: block;
+      margin: 10px 0 3px;
+    }
+    .contact-info a {
+      color: #aaddff;
+      text-decoration: none;
+    }
+
+    .sidebar button {
+      margin-top: 30px;
+      background-color: #fff;
+      color: #054785;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 50px;
+      flex-grow: 1;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    main h2 {
+      color: #115fa8;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    main p, main li {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style: disc inside;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #0066cc;
+      color: white;
+    }
+    body.dark th {
+      background-color: #004a99;
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+    .skill-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .skill-bar {
+      height: 10px;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .skill-level {
+      height: 100%;
+      background-color: #0066cc;
+      border-radius: 20px;
+    }
+
+    .links a {
+      display: block;
+      color: #0066cc;
+      text-decoration: none;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .soft-skills ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      padding-left: 20px;
+    }
+
+    .soft-skills li {
+      background: #f1f1f1;
+      padding: 8px 12px;
+      border-radius: 5px;
+      color: #175997;
+      font-weight: 500;
+    }
+
+    body.dark .soft-skills li {
+      background: #2c2c2c;
+      color: #aaddff;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .container {
+        flex-direction: column;
+        margin: 10px;
+      }
+      .sidebar {
+        width: 100%;
+      }
+      main {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <button id="toggleTheme" aria-label="Toggle Theme" 
+    style="position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 1.5rem; cursor: pointer; z-index: 1000;">
+    <i id="themeIcon" class="fas fa-moon"></i>
+  </button>
+  <aside class="sidebar">
+    <img src="img2.jpg" alt="Krati Gupta Photo" />
+    <h1>Krati Gupta</h1>
+    <p>BCA Student | Full Stack Developer</p>
+
+    <div class="contact-info">
+      <strong>Email</strong>
+      <a href="mailto:krati.gupta2506@gmail.com">krati.gupta2506@gmail.com</a>
+
+      <strong>Phone</strong>
+      <a href="tel:+919125709300">+91-9125709300</a>
+
+      <strong>Location</strong>
+      <p>Nawabganj, Unnao, Uttar Pradesh, India</p>
+    </div>
+  </aside>
+
+  <main>
+    <section>
+      <h2>Career Objective</h2>
+      <p>A dedicated and highly motivated BCA student aiming to become a top-ranking software developer and contribute meaningfully to innovative technology projects. Passionate about web development, problem-solving, and continuous skill improvement.</p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Qualification</th>
+            <th>Institute & Board</th>
+            <th>Year</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BCA (Graduation)</td>
+            <td>PSIT-CHE, Kanpur (CSJMU)</td>
+            <td>2027</td>
+            <td>9.5 CGPA (Ongoing)</td>
+          </tr>
+          <tr>
+            <td>12th (CBSE)</td>
+            <td>PM Shri Kendriya Vidyalaya</td>
+            <td>2024</td>
+            <td>75%</td>
+          </tr>
+          <tr>
+            <td>10th (CBSE)</td>
+            <td>Adarsh Vidya Mandir</td>
+            <td>2022</td>
+            <td>85.8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skill">
+        <div class="skill-name">Programming Languages</div>
+        <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+        <p>C, C++, Python, Java</p>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Web Development</div>
+        <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+        <p>HTML, CSS, JavaScript</p>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Database</div>
+        <div class="skill-bar"><div class="skill-level" style="width: 60%;"></div></div>
+        <p>MySQL</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Soft Skills</h2>
+      <div class="soft-skills">
+        <ul>
+          <li>Effective Communication</li>
+          <li>Team Leadership</li>
+          <li>Problem Solving</li>
+          <li>Time Management</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Personal Portfolio Website</strong>: Developed a responsive portfolio using HTML, CSS, and JavaScript. Features include dark mode, print-resume support, and mobile-first design.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certifications & Internships</h2>
+      <ul>
+        <li>HTML & CSS Certification: Coursera</li>
+        <li>Python Basics: HackerRank</li>
+        <li>Web Development: CodeClause </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Achievements</h2>
+      <ul>
+        <li>Consistent academic topper</li>
+        <li>Active participant in online coding challenges</li>
+        <li>Maintained CGPA above 9.5</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Important Links</h2>
+      <div class="links">
+       <a href="https://kratiigupta.github.io/Portfolio/" target="_blank">Portfolio Website</a>
+       <a href="https://www.linkedin.com/in/krati-gupta-039a61349/" target="_blank">LinkedIn</a>
+       <a href="https://github.com/Kratiigupta" target="_blank">GitHub</a>
+       <a href="https://www.hackerrank.com/24116002282_krti" target="_blank">HackerRank</a>
+       <a href="https://leetcode.com/kratii_gupta/" target="_blank">Leetcode</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  const toggleButton = document.getElementById('toggleTheme');
+  const icon = document.getElementById('themeIcon');
+  const body = document.body;
+
+  toggleButton.onclick = function () {
+    body.classList.toggle('dark');
+    icon.classList.toggle('fa-sun');
+    icon.classList.toggle('fa-moon');
+
+    if (body.classList.contains('dark')) {
+      icon.style.color = 'white';
+    } else {
+      icon.style.color = 'black';
+    }
+  };
+</script>
+</body>
+</html>
